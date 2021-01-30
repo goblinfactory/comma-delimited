@@ -3,7 +3,7 @@
 Cross platform .NET standard 1 native comma delimited data types for C# .NET core, .net framework, andriod, xamarin. 
 
 ![Goblinfactory.Delimited](https://github.com/goblinfactory/comma-delimited/workflows/Goblinfactory.Delimited/badge.svg)
-
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
 ## Create method properties with real comma delimited data types.
 
 The primary purpose of the library is to allow you to accept parameters using comma delimited or pipe delimited values and to assign those values immediately to a string[] in the constructor of your class.
