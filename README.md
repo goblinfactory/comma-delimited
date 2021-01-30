@@ -2,7 +2,7 @@
 
 Cross platform .NET standard 1 native comma delimited data types for C# .NET core, .net framework, andriod, xamarin. 
 
-![Goblinfactory.Delimited](https://github.com/goblinfactory/comma-delimited/workflows/Goblinfactory.Delimited/badge.svg?branch=master)
+![Goblinfactory.Delimited](https://github.com/goblinfactory/comma-delimited/workflows/Goblinfactory.Delimited/badge.svg)
 
 ## Create method properties with real comma delimited data types.
 
