@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <RootNamespace>Goblinfactory.Delimited</RootNamespace>
+    <AssemblyName>Goblinfactory.Delimited</AssemblyName>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Description>Cross platform .NET standard 1 native comma delimited data types for C# .NET core, .net framework, andriod, xamarin. Create method properties with real comma delimited data types.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
