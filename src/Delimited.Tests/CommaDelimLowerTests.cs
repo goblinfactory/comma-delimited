@@ -28,6 +28,7 @@ namespace Goblinfactory.Delimited.Tests
             cd.Should().BeEquivalentTo(new[] { "ab", "cdef", "", "a" });
             cd.ToString().Should().Be("ab,cdef,,a");
         }
+
     }
 }
 

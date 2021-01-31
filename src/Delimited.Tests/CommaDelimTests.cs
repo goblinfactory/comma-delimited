@@ -23,14 +23,6 @@ namespace Goblinfactory.Delimited.Tests
         }
 
         [Test]
-        public void Tostring_returns_comma_seperated()
-        {
-            CommaDelim cd = "123,456";
-            cd.Should().BeEquivalentTo(new[] { "123", "456" });
-            cd.ToString().Should().Be("123,456");
-        }
-
-        [Test]
         public void empty_string_returns_empty_array()
         {
             var cat = new CommaCat("");
@@ -42,6 +34,14 @@ namespace Goblinfactory.Delimited.Tests
         {
             var cat = new CommaCat("123 ,45, 6   ,7");
             cat.Kittens.Should().BeEquivalentTo(new[] { "123", "45", "6", "7" });
+        }
+
+        [Test]
+        public void Tostring_returns_comma_seperated()
+        {
+            CommaDelim cd = "123,456";
+            cd.Should().BeEquivalentTo(new[] { "123", "456" });
+            cd.ToString().Should().Be("123,456");
         }
     }
 }

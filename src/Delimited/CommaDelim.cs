@@ -6,10 +6,7 @@
 
         public CommaDelim(string values) : base(values.SplitAndTrim(',')) { }
 
-        public override string ToString()
-        {
-            return string.Join(",", Values);
-        }
+        public override string ToString() => string.Join(",", Values);
 
         public static implicit operator CommaDelim(string[] text) => new CommaDelim(text);
         public static implicit operator CommaDelim(string text) => new CommaDelim(text.SplitAndTrim(','));

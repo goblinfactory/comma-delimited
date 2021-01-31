@@ -35,7 +35,7 @@ namespace Goblinfactory.Delimited.Tests
         [Test]
         public void Tostring_returns_pipe_seperated()
         {
-            PipeDelimLower cd = "12 3| aB  |  6";
+            PipeDelimUpper cd = "12 3| aB  |  6";
             cd.ToString().Should().Be("12 3|AB|6");
         }
 
