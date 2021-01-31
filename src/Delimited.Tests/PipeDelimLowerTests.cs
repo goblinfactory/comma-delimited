@@ -44,12 +44,10 @@ namespace Goblinfactory.Delimited.Tests
         }
 
         [Test]
-        public void values_can_be_enumerated()
+        public void Tostring_returns_pipe_seperated()
         {
-            var cd = new PipeDelimLower("12|three||four");
-            var items = new List<string>();
-            foreach (var c in cd) items.Add(c);
-            items.ToArray().Should().BeEquivalentTo(new[] { "12", "three", "", "four" });
+            PipeDelimLower cd = "12 3| aB  |  6";
+            cd.ToString().Should().Be("12 3|ab|6");
         }
     }
 }

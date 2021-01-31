@@ -31,15 +31,6 @@ namespace Goblinfactory.Delimited.Tests
         }
 
         [Test]
-        public void values_can_be_enumerated()
-        {
-            var cd = new CommaDelim("12,three,four");
-            var items = new List<string>();
-            foreach (var c in cd) items.Add(c);
-            items.ToArray().Should().BeEquivalentTo(new[] { "12", "three", "four" });
-        }
-
-        [Test]
         public void empty_string_returns_empty_array()
         {
             var cat = new CommaCat("");
@@ -52,8 +43,6 @@ namespace Goblinfactory.Delimited.Tests
             var cat = new CommaCat("123 ,45, 6   ,7");
             cat.Kittens.Should().BeEquivalentTo(new[] { "123", "45", "6", "7" });
         }
-
-
     }
 }
 

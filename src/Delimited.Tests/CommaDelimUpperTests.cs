@@ -55,15 +55,6 @@ namespace Goblinfactory.Delimited.Tests
             cd.Should().BeEquivalentTo(new[] { "AB", "CDEF", "", "A" });
             cd.ToString().Should().Be("AB,CDEF,,A");
         }
-
-        [Test]
-        public void values_can_be_enumerated()
-        {
-            var cd = new CommaDelimUpper("12,three,,four");
-            var items = new List<string>();
-            foreach (var c in cd) items.Add(c);
-            items.ToArray().Should().BeEquivalentTo(new[] { "12", "THREE", "", "FOUR" });
-        }
     }
 }
 

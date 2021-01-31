@@ -4,18 +4,35 @@ using System.Linq;
 
 namespace Goblinfactory.Delimited
 {
-    public class DelimBase : IEnumerable<string>
+    public abstract class DelimBase : IEnumerable<string>
     {
-        protected string[] _values;
-        protected List<string> _enumerable = null;
-        public IEnumerator<string> GetEnumerator()
+        public virtual string[] Values { get; }
+
+        List<string> _enumerable = null;
+        public DelimBase(string[] values)
         {
-            return (_enumerable ?? (_enumerable = _values.ToList())).GetEnumerator();
+            Values = values;
         }
+
+        public abstract override string ToString();
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return (_enumerable ?? (_enumerable = _values.ToList())).GetEnumerator();
+            return (_enumerable ?? (_enumerable = Values.ToList())).GetEnumerator();
+        }
+
+        public IEnumerator<string> GetEnumerator()
+        {
+            return (_enumerable ?? (_enumerable = Values.ToList())).GetEnumerator();
+        }
+
+
+        public string this[int i]
+        {
+            get
+            {
+                return Values[i];
+            }
         }
     }
 }

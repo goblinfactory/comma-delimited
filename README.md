@@ -46,7 +46,7 @@ dotnet add package `Goblinfactory.Delimited`
 In the example below, the default `CommaDelim` data type is being used.
 
 ```csharp
-public record Cat(CommaDelim kittens);
+public record Cat(CommaDelim Kittens);
 
 var cat = new Cat("Mike, Bob, ,Ginger");
 
@@ -86,7 +86,13 @@ Ginger
 Delimited strings using comma (,). Whitespace is removed.
 
 ```csharp
-public record Cat(CommaDelim kittens);
+CommaDelim cd = "12 3, aB  ,  6";
+cd.ToString().Should().Be("12 3,aB,6");
+cd[1] == "aB"
+```
+
+```csharp
+public record Cat(CommaDelim Kittens);
 var cat = new Cat("Mike, Bob,, Ginger");
 
 cat.Kittens[3] == "Ginger";
@@ -97,7 +103,13 @@ cat.Kittens[3] == "Ginger";
 Delimited strings using comma (,). Whitespace is removed.  Values are converted to Invariant Uppercase.
 
 ```csharp
-public record Cat(CommaDelimUpper kittens);
+CommaDelimUpper cdu = "12 3, aB  ,  6";
+cdu.ToString().Should().Be("12 3,AB,6");
+cdu[1] == "AB"
+```
+
+```csharp
+public record Cat(CommaDelimUpper Kittens);
 var cat = new Cat("Mike, Bob,, Ginger");
 
 cat.Kittens[3] == "GINGER";
@@ -108,7 +120,13 @@ cat.Kittens[3] == "GINGER";
 Delimited strings using comma (,). Whitespace is removed.  Values are converted to Invariant lowercase.
 
 ```csharp
-public record Cat(CommaDelimUpper kittens);
+CommaDelimLower cdl = "12 3, aB  ,  6";
+cdl.ToString().Should().Be("12 3,ab,6");
+cdl[1] == "ab"
+```
+
+```csharp
+public record Cat(CommaDelimUpper Kittens);
 var cat = new Cat("Mike, Bob,, Ginger");
 
 cat.Kittens[3] == "ginger";
@@ -118,7 +136,13 @@ cat.Kittens[3] == "ginger";
 
 Delimited strings using Pipe (|). Whitespace is removed. 
 ```csharp
-public record Cat(PipeDelim kittens);
+PipeDelim pd = "12 3| aB  |  6";
+pd.ToString().Should().Be("12 3|aB|6");
+pd[1] == "aB"
+```
+
+```csharp
+public record Cat(PipeDelim Kittens);
 var cat = new Cat("Mike| Bob||Ginger");
 
 cat.Kittens[1] == "Bob";
@@ -127,8 +151,15 @@ cat.Kittens[1] == "Bob";
 ## `PipeDelimUpper`
 
 Delimited strings using Pipe (|). Whitespace is removed. Values are converted to Invariant uppercase.
+
 ```csharp
-public record Cat(PipeDelimUpper kittens);
+PipeDelimUpper pdu = "12 3| aB  |  6";
+pdu.ToString().Should().Be("12 3|AB|6");
+pdu[1] == "AB"
+```
+
+```csharp
+public record Cat(PipeDelimUpper Kittens);
 var cat = new Cat("Mike| Bob||Ginger");
 cat.Kittens[3] == "GINGER";
 ```
@@ -137,11 +168,35 @@ cat.Kittens[3] == "GINGER";
 
 Delimited strings using Pipe (|). Whitespace is removed. Values are converted to Invariant lowercase.
 ```csharp
-public record Cat(PipeDelimLower kittens);
+PipeDelimLower pdl = "12 3| aB  |  6";
+pdl.ToString().Should().Be("12 3|ab|6");
+pdl[1] == "ab"
+```
+```csharp
+public record Cat(PipeDelimLower Kittens);
 var cat = new Cat("Mike| Bob||Ginger");
 cat.Kittens[3] == "ginger";
 ```
 
+## C# 8 and lower
+
+Typical pattern for assigning CommaDelim properties to string[] arrays works as follows;
+
+```csharp
+public class Cat
+{
+    public string[] Kittens;
+    public Cat(CommaDelim kittens) {
+        Kittens = kittens;
+    }
+}
+
+var cat = new Cat("Mike, Bob,,Ginger");
+cat.Kittens[3] == "ginger";
+
+```
+
+All the Delimited types work with all versions of C#. I've purely used C#9 record types above to simplify the documentation.
 
 
 

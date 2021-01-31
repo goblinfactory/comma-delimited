@@ -32,15 +32,13 @@ namespace Goblinfactory.Delimited.Tests
             var cat3 = new PipeUpperCat((string)null);
             cat3.Kittens.Should().BeEquivalentTo(new string[0]);
         }
-
         [Test]
-        public void values_can_be_enumerated()
+        public void Tostring_returns_pipe_seperated()
         {
-            var cd = new PipeDelimUpper("12|three||FouR");
-            var items = new List<string>();
-            foreach (var c in cd) items.Add(c);
-            items.ToArray().Should().BeEquivalentTo(new[] { "12", "THREE", "", "FOUR" });
+            PipeDelimLower cd = "12 3| aB  |  6";
+            cd.ToString().Should().Be("12 3|AB|6");
         }
+
     }
 }
 
