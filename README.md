@@ -198,6 +198,28 @@ cat.Kittens[3] == "ginger";
 
 All the Delimited types work with all versions of C#. I've purely used C#9 record types above to simplify the documentation.
 
+## Representing Empty - use ""
 
+* Use an empty string to represent an empty array. e.g.
+```csharp
+var cat = new Cat("");
+```
+You cannot use `null` to represent an empty string, because the compiler cannot tell what type you mean when you write a null on it's own.
+```csharp
+var cat = new cat(null); <-- Will give you object null exception.
+var cat = new cat((string)null) <-- will be converted into an empty array without error
+```
+The reason for the above behavior is because there are three legitimate types that can be passed as a property as an initialiser. While `Cat` has been defined as taking a `CommaDelim` type as it's first property in the constructor, that means you can pass in
+1. string
+2. string[]
+or
+3. a `CommaDelim` instance.
 
+When  passing a `null` the compiler can't which of these three you mean, and the compiler does not know  that it wouldn't make any difference in this particular case. 
+
+## C# nullable and non nullable reference types
+
+If you want to use stronger type constructs like Pipe and Comma delimiters, I highly recommed you investigate using the new C# 8 language feature -> nullable and non nullable reference types. It opens the door for creating new classes that you want to treat as native language constructs. 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references
 

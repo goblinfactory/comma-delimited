@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <RootNamespace>Goblinfactory.Delimited</RootNamespace>
     <AssemblyName>Goblinfactory.Delimited</AssemblyName>
-    <PackageReleaseNotes>first version, all good.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added indexing.</PackageReleaseNotes>
     <Description>Cross platform .NET standard 1 native comma delimited data types for C# .NET core, .net framework, andriod, xamarin. Create method properties with real comma delimited data types.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Goblinfactory Ltd</Company>
@@ -15,6 +15,7 @@
     <RepositoryType>Github</RepositoryType>
     <PackageTags>CommaDelimited, CSV, Comma, Pipe</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>
