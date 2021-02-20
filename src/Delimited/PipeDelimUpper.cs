@@ -2,6 +2,7 @@
 {
     public class PipeDelimUpper : DelimBase
     {
+        public PipeDelimUpper() : base() { }
         public PipeDelimUpper(string[] values) : base(values) { }
         public PipeDelimUpper(string values) : base(values.SplitAndTrimUpper('|')) { }
         public override string ToString() => string.Join("|", Values);

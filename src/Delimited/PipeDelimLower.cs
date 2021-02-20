@@ -2,6 +2,7 @@
 {
     public class PipeDelimLower : DelimBase
     {
+        public PipeDelimLower() : base() { }
         public PipeDelimLower(string[] values) : base(values) { }
         public PipeDelimLower(string values) : base(values.SplitAndTrimLower('|')) { }
         public override string ToString() => string.Join("|", Values);

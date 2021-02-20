@@ -9,6 +9,8 @@ namespace Goblinfactory.Delimited
         public virtual string[] Values { get; }
 
         List<string> _enumerable = null;
+
+        public DelimBase() : this(new string[0]) { }
         public DelimBase(string[] values)
         {
             Values = values;

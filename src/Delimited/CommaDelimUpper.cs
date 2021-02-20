@@ -2,6 +2,7 @@
 {
     public class CommaDelimUpper : DelimBase
     {
+        public CommaDelimUpper() : base() { }
         public CommaDelimUpper(string[] values) : base(values) { }
         public CommaDelimUpper(string values) : base(values.SplitAndTrimUpper(',')) { }
         public override string ToString() => string.Join(",", Values);

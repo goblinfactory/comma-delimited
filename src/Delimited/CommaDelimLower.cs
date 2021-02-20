@@ -2,6 +2,7 @@
 {
     public class CommaDelimLower : DelimBase
     {
+        public CommaDelimLower() : base() { }
         public CommaDelimLower(string[] values) : base(values){}
 
         public CommaDelimLower(string values) : base(values.SplitAndTrimLower(',')) { }

@@ -2,6 +2,7 @@
 {
     public class CommaDelim : DelimBase
     {
+        public CommaDelim() : base() { }
         public CommaDelim(string[] values) : base(values) { }
 
         public CommaDelim(string values) : base(values.SplitAndTrim(',')) { }

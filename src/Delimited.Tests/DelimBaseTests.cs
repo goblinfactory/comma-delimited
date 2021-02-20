@@ -21,5 +21,12 @@ namespace Goblinfactory.Delimited.Tests
             var cd = new CommaDelim("12,three,four");
             Assert.True(cd[1] == "three");
         }
+
+        [Test]
+        public void Parameterless_constructor_should_return_empty_string()
+        {
+            var cd = new CommaDelim();
+            cd.Should().BeEquivalentTo(new string[0]);
+        }
     }
 }
